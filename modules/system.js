@@ -1,5 +1,5 @@
 const os = require('os');
-const si = require('systeminformation');
+const fs = require('fs');
 
 module.exports = {
     'getServerUpTime': function() {
@@ -15,9 +15,9 @@ module.exports = {
     },
 
     'getCpuTemperature': function() {
-        let temp = si.cpuTemperature();
+        let temp = fs.readFileSync("/sys/class/thermal/thermal_zone0/temp");
+        temp = temp/1000;
 
-        console.log(temp)
         return temp
     }
 }
