@@ -3,6 +3,7 @@ var path = require('path');
 var system = require('./server/modules/system');
 var colors = require('colors');
 
+<<<<<<< HEAD
 const PORT = process.env.PORT ?? 3000;
 const app = express();
 
@@ -19,3 +20,7 @@ app.get('/', (req, res) => {
 })
 
 app.listen(PORT, () => console.log(colors.bold('Started')));
+=======
+console.log(system.getServerUpTime())
+console.log(system.getCpuTemperature())
+>>>>>>> 8834b9b3f8c063c3b5aaabf8f668bb94597cbdf4
