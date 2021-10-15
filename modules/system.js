@@ -15,12 +15,20 @@ module.exports = {
     },
 
     'getCpuTemperature': function() {
+        try {
+            let isWindows = os.version();
+            if (isWindows) return 'Not available'
+        } catch(e) {
+            console.log('Windows ERROR: ', e)
+        }
 
-        let temp = os.version()
-        // let temp = fs.readFileSync("/sys/class/thermal/thermal_zone0/temp");
-        // temp = Math.round(temp/1000);
-        console.log(temp)
-        return temp
+        try {
+            let temp = fs.readFileSync("/sys/class/thermal/thermal_zone0/temp");
+            temp = Math.round(temp/1000) + 'C';
+            return temp
+        } catch (e) {
+            console.log('Raspberry Pi  ERROR: ', e)
+        }
     }
 }
 
