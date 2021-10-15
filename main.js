@@ -3,13 +3,13 @@ var path = require('path');
 var system = require('./server/modules/system');
 var colors = require('colors');
 
-var PORT;
+var PORT = 3000;
 
-try {
-    PORT = process.env.PORT ?? 3000;
-} catch (e) {
-    PORT = 3000;
-}
+// try {
+//     PORT = process.env.PORT ?? 3000;
+// } catch (e) {
+    // PORT = 3000;
+// }
 
 const app = express();
 
