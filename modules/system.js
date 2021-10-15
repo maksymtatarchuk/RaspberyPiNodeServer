@@ -15,9 +15,11 @@ module.exports = {
     },
 
     'getCpuTemperature': function() {
-        let temp = fs.readFileSync("/sys/class/thermal/thermal_zone0/temp");
-        temp = temp/1000;
 
+        let temp = os.version()
+        // let temp = fs.readFileSync("/sys/class/thermal/thermal_zone0/temp");
+        // temp = Math.round(temp/1000);
+        console.log(temp)
         return temp
     }
 }
