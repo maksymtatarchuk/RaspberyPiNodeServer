@@ -27,14 +27,30 @@ module.exports = {
     },
 
     'getCpuTemperature': function() {
+        let temp = {};
         try {
-            let temp = fs.readFileSync("/sys/class/thermal/thermal_zone0/temp");
-            temp = temp/1000;
-
+            temp.value = fs.readFileSync("/sys/class/thermal/thermal_zone0/temp");
+            temp.value = Math.round(temp.value/10)/100;
+            switch (temp.value) {
+                case (temp.value > 60):
+                    temp.status = 'danger';
+                    break;
+                case (temp.value > 50):
+                    temp.status = 'warning';
+                    break;
+                case (temp.value > 40):
+                    temp.status = 'secondary';
+                    break;
+                default:
+                    temp.status = 'success';
+            }
+            temp.value += ' C'
             return temp
         } catch (e) {
             console.log('ERROR: CPU temp on Raspberry Pi only!')
-            return '!ERR'
+            temp.value = '!ERR';
+            temp.status = 'danger'
+            return temp
         }
     },
 
