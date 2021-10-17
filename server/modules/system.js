@@ -32,19 +32,17 @@ module.exports = {
             temp.value = fs.readFileSync("/sys/class/thermal/thermal_zone0/temp");
             temp.value = Math.round(temp.value/10)/100;
             console.log(temp.value)
-            switch (temp.value) {
-                case temp.value > 60:
-                    temp.status = 'danger';
-                    break;
-                case temp.value > 50:
-                    temp.status = 'warning';
-                    break;
-                case temp.value > 40:
-                    temp.status = 'secondary';
-                    break;
-                default:
-                    temp.status = 'success';
-            }
+
+            if (temp.value > 60) {
+                temp.status = 'danger';
+            } else if (temp.value > 50) {
+                temp.status = 'warning';
+            } else if (temp.value > 40) {
+                temp.status = 'secondary';
+            } else {
+                temp.status = 'success';
+            };
+
             temp.value += ' C'
             return temp
         } catch (e) {
