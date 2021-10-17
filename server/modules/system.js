@@ -29,7 +29,7 @@ module.exports = {
     'getCpuTemperature': function() {
         try {
             let temp = fs.readFileSync("/sys/class/thermal/thermal_zone0/temp");
-            temp = temp/100;
+            temp = temp/1000;
 
             return temp
         } catch (e) {
