@@ -33,13 +33,13 @@ module.exports = {
             temp.value = Math.round(temp.value/10)/100;
             console.log(temp.value)
             switch (temp.value) {
-                case (temp.value > 60):
+                case temp.value > 60:
                     temp.status = 'danger';
                     break;
-                case (temp.value > 50):
+                case temp.value > 50:
                     temp.status = 'warning';
                     break;
-                case (temp.value > 40):
+                case temp.value > 40:
                     temp.status = 'secondary';
                     break;
                 default:
