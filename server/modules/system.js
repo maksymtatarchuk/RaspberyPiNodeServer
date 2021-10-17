@@ -29,8 +29,9 @@ module.exports = {
     'getCpuTemperature': function() {
         try {
             let temp = fs.readFileSync("/sys/class/thermal/thermal_zone0/temp");
-            temp = Math.round(temp/1000);
+            temp = temp/100;
             temp = dataUtil.getTempVive(temp)
+
             return temp
         } catch (e) {
             console.log('ERROR: CPU temp on Raspberry Pi only!')

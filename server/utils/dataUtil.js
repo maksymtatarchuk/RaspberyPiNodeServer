@@ -33,10 +33,5 @@ module.exports = {
         time.viveData = getViveData(time);
 
         return time
-    },
-
-    getTempVive: function(temp) {
-        console.log(temp)
-        return temp
     }
 }

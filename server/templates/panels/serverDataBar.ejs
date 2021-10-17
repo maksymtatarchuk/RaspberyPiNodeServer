@@ -5,10 +5,19 @@
         <span class="js-server-up-time badge badge-secondary"><%= serverUpTime.viveData %></span>
     </span>
     <% } %>
-    <% if (cpuTemperature) {%>
+    <% if (cpuTemperature !== '!ERR') {%>
     <span class="server-sys-param">
         Temperature:
-        <span class="js-server-temp badge badge-secondary"></span>
+        <span class="js-server-temp badge badge-
+        <% if (cpuTemperature > 60) { %>
+            Danger
+        <% } else if (cpuTemperature > 50) { %>
+            Warning
+        <% } else if (cpuTemperature > 40) { %>
+            Secondary
+        <% } else { %>
+            Success
+        <% } %>"><%= cpuTemperature %> C</span>
     </span>
     <% } %>
     <% if (cpu) {%>
