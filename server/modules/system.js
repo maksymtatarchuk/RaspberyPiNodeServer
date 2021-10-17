@@ -30,7 +30,6 @@ module.exports = {
         try {
             let temp = fs.readFileSync("/sys/class/thermal/thermal_zone0/temp");
             temp = temp/100;
-            temp = dataUtil.getTempVive(temp)
 
             return temp
         } catch (e) {
