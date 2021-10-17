@@ -2,20 +2,25 @@
   "name": "raspberypinodeserver",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node main.js",
-    "dev": "nodemon main.js"
+    "test": "node sys/test.js",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
   "author": "Maksym Tatarchuk maksym.tatarchuk@gmail.com",
   "license": "ISC",
   "dependencies": {
-    "colors": "^1.4.0",
+    "bootstrap": "^4.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
+    "jquery": "^3.6.0",
     "node": "^16.10.0",
-    "nodemon": "^2.0.13",
+    "shelljs": "^0.8.4",
     "systeminformation": "^5.9.7"
+  },
+  "devDependencies": {
+    "colors": "^1.4.0",
+    "nodemon": "^2.0.13"
   }
 }

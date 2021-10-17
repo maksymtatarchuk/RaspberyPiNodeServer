@@ -1,0 +1,20 @@
+<div class="server-data-bar d-flex justify-content-end">
+    <% if (serverUpTime) {%>
+    <span class="server-sys-param">
+        Uptime:
+        <span class="js-server-up-time badge badge-secondary"><%= serverUpTime.viveData %></span>
+    </span>
+    <% } %>
+    <% if (cpuTemperature) {%>
+    <span class="server-sys-param">
+        Temperature:
+        <span class="js-server-temp badge badge-secondary"></span>
+    </span>
+    <% } %>
+    <% if (cpu) {%>
+    <span class=" server-sys-param">
+        Power status:
+        <span class="badge badge-secondary"></span>
+    </span>
+    <% } %>
+</div>
