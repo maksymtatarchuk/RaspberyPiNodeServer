@@ -31,7 +31,6 @@ module.exports = {
         try {
             temp.value = fs.readFileSync("/sys/class/thermal/thermal_zone0/temp");
             temp.value = Math.round(temp.value/10)/100;
-            console.log(temp.value)
 
             if (temp.value > 60) {
                 temp.status = 'danger';
@@ -44,7 +43,6 @@ module.exports = {
             temp.value += ' C'
             return temp
         } catch (e) {
-            // console.log('ERROR: CPU temp on Raspberry Pi only!')
             temp.value = 'Raspberry Pi only!';
             temp.status = 'danger'
             return temp
