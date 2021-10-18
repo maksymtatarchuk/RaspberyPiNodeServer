@@ -1,4 +1,4 @@
-echo "Hello World!"
-sudo -i
-git -- pull
+echo "Server autorun ->"
+cd /home/pi/Public/Projects/RaspberyPiNodeServer/
+sudo  git pull origin main
 npm -- start
