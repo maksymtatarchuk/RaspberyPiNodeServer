@@ -19,7 +19,7 @@ module.exports = {
         time.s = Math.floor(seconds - time.d * 86400 - time.h * 3600 - time.m * 60);
 
         time.viveData = numbToString(time);
-        
+        console.log(time)
         return time
     }
 }
