@@ -23,6 +23,7 @@ module.exports = {
     'getServerUpTime': function() {
         let upTime = os.uptime();
         let serverUptime = dataUtil.countTimer(upTime);
+        console.log(serverUptime)
         return serverUptime
     },
 
@@ -32,9 +33,9 @@ module.exports = {
             temp.value = fs.readFileSync("/sys/class/thermal/thermal_zone0/temp");
             temp.value = Math.round(temp.value/10)/100;
 
-            if (temp.value > 60) {
+            if (temp.value > 70) {
                 temp.status = 'danger';
-            } else if (temp.value > 50) {
+            } else if (temp.value > 60) {
                 temp.status = 'warning';
             } else {
                 temp.status = 'success';
