@@ -11,7 +11,8 @@ router.get('/api/sysParams', (req, res) => {
 })
 
 router.get('/api/reboot', (req, res) => {
-    system.runShell()
+    let data = system.runShell()
+    res.json({value: data})
 })
 
 module.exports = router;

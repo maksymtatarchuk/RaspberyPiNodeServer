@@ -97,7 +97,7 @@ module.exports = {
     },
 
     runShell: function() {
-        console.log(os.arch())
+        return os.arch()
     }
 }
 
