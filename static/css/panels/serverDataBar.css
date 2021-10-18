@@ -1,12 +1,13 @@
+
 .server-data-bar {
     background-color: #6f42c188;
     font-family: serif;
-    padding: 4px 15px 4px 20%;
+    padding: 4px 0;
     cursor: default;
     user-select: none;
+    align-items: center;
 }
 
 .server-sys-param {
-    height: min-content;
-    margin: 0 10px;
+    margin: 0 5px;
 }

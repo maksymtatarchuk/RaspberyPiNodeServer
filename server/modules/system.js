@@ -1,6 +1,6 @@
 const os = require('os');
 const fs = require('fs');
-// const shell = require('shelljs');
+const shell = require('shelljs');
 const exec = require('child_process').exec;
 
 const dataUtil = require('../utils/dataUtil');
@@ -93,9 +93,11 @@ module.exports = {
             commandExecutor(command);
         }
 
-
-        // console.log(os.arch())
         // console.log('getTest()')
+    },
+
+    runShell: function() {
+        console.log(os.arch())
     }
 }
 

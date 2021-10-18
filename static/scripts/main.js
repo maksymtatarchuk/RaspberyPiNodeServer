@@ -1,6 +1,6 @@
 
 
-let timerToggle = null;
+let timerToggle;
 
 function updateSererDataMonitoringBar() {
     timerToggle = setInterval(() => {
@@ -32,4 +32,8 @@ $('#server-data-monitoring').on('click', (e) => {
         clearInterval(timerToggle)
     }
     $('#server-data-monitoring').attr('status', data)
+})
+
+$('#sys-shell-reboot').on('click', () => {
+    $.get('/api/reboot', (data) => console.log('reboot'))
 })

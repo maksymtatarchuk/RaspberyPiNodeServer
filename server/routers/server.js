@@ -10,4 +10,8 @@ router.get('/api/sysParams', (req, res) => {
     })
 })
 
+router.get('/api/reboot', (req, res) => {
+    system.runShell()
+})
+
 module.exports = router;
