@@ -48,8 +48,10 @@ function countTimer(seconds) {
 
 function getTempValue(temp) {
     temp = temp.toString().split('.')
+    let a = parseInt(temp[0]) < 10 ? '0' + temp[0] : temp[0]
+    let b = parseInt(temp[1]) < 10 ? '0' + temp[1] : temp[1]
 
-    return parseInt(temp[0]) < 10 ? '0' + temp[0] : temp[0] + '.' + parseInt(temp[1]) < 10 ? '0' + temp[1] : temp[1] + ' C'
+    return a + '.' + b + ' C'
 }
 
 module.exports = {
@@ -61,6 +63,7 @@ module.exports = {
 
     'getCpuTemperature': function() {
         let temp = {};
+        console.log(getTempValue(47.54))
         try {
             temp.value = fs.readFileSync("/sys/class/thermal/thermal_zone0/temp");
             temp.value = Math.round(temp.value/10)/100;
