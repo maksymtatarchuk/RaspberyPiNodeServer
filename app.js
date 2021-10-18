@@ -29,7 +29,7 @@ app.use(serverRouters);
 app.get('/', (req, res) => {
     // system.executeCommand('node -v');
     res.render('index', {
-        'serverUpTime': system.getServerUpTime(),
+        'serverUpTime': system.getServerUpTime().viveData,
         'cpuTemperature': system.getCpuTemperature()
     })
 });

@@ -2,7 +2,7 @@ const router = require('express').Router();
 const system = require('../modules/system');
 
 router.get('/api/sysParams', (req, res) => {
-    let timeUp = system.getServerUpTime()
+    let timeUp = system.getServerUpTime().viveData
     let temp = system.getCpuTemperature()
     res.json({
         'timeUp': timeUp,

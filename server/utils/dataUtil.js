@@ -1,37 +1,25 @@
 
-function rebuildDate(date) {
-    for (var key in date) {
-        if (date[key] < 10) {
-            date[key] = '0' + date[key];
-        } else {
-            date[key] = date[key].toString();
-        }
-    }
-
-    return date
-}
-
-function getViveData(data) {
-    let result = '';
-
-    for (let key in data) {
-        result += key + ': ' + data[key] + ' ';
+function numbToString(obj) {
+    let result = {};
+    for (let key in obj) {
+        result[key] = obj[key] < 10 & key !== 'd' ? '0' + obj[key] : obj[key].toString();
     }
 
     return result
 }
 
+
 module.exports = {
     countTimer: function(seconds) {
         let time = {};
-        time.d = Math.floor(seconds / 86400);
-        time.h = Math.floor(seconds / 3600 - time.d * 24);
-        time.m = Math.floor(seconds / 60 - time.d * 1440 - time.h * 60);
+
+        seconds >= 86400 ? time.d = Math.floor(seconds / 86400) : null;
+        seconds >= 3600 ? time.h = Math.floor(seconds / 3600 - time.d * 24) : null;
+        seconds >= 60 ? time.m = Math.floor(seconds / 60 - time.d * 1440 - time.h * 60) : null;
         time.s = Math.floor(seconds - time.d * 86400 - time.h * 3600 - time.m * 60);
 
-        time = rebuildDate(time);
-        time.viveData = getViveData(time);
-
+        time.viveData = numbToString(time);
+        
         return time
     }
 }

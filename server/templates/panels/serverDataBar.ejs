@@ -1,6 +1,5 @@
 <div class="server-data-bar d-flex justify-content-end">
     <span class="server-sys-param d-flex">
-        <div id="server-data-bar-spinner"></div>
         <div class="form-check">
             <input type="checkbox" class="form-check-input" id="server-data-monitoring" status="off">
             <label class="form-check-label" for="exampleCheck1">Auto</label>
@@ -9,14 +8,12 @@
     <% if (serverUpTime) {%>
     <span class="server-sys-param">
         Uptime:
-        <% for (let key in serverUpTime) {
-            if (key != 'viveData') { %>
-                <span class="js-server-up-time badge badge-primary"><%= serverUpTime[key] + ' ' + key %></span>
-            <% }
-        } %>
+        <% for (let key in serverUpTime) { %>
+                <span class="js-server-up-time-<%= key %> badge badge-primary"><%= serverUpTime[key] + ' ' + key %></span>
+        <% } %>
     </span>
     <% } %>
-    <% if (cpuTemperature !== '!ERR') {%>
+    <% if (cpuTemperature !== 'Raspberry Pi only!') {%>
     <span class="server-sys-param">
         Temperature:
         <span class="js-server-temp badge badge-<%= cpuTemperature.status %>"><%= cpuTemperature.value %></>

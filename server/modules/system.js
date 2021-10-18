@@ -44,8 +44,8 @@ module.exports = {
             temp.value += ' C'
             return temp
         } catch (e) {
-            console.log('ERROR: CPU temp on Raspberry Pi only!')
-            temp.value = '!ERR';
+            // console.log('ERROR: CPU temp on Raspberry Pi only!')
+            temp.value = 'Raspberry Pi only!';
             temp.status = 'danger'
             return temp
         }
