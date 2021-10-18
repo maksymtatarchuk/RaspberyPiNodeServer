@@ -37,8 +37,6 @@ module.exports = {
                 temp.status = 'danger';
             } else if (temp.value > 50) {
                 temp.status = 'warning';
-            } else if (temp.value > 40) {
-                temp.status = 'secondary';
             } else {
                 temp.status = 'success';
             };
