@@ -7,8 +7,9 @@ function updateSererDataMonitoringBar() {
         $.get('/api/sysParams', (data) => {
 
             // Update timer
+            $(`.js-server-up-time`).remove()
             for (let key in data.timeUp) {
-                $(`.js-server-up-time-${key}`).text(data.timeUp[key] + ' ' + key)
+                $('.js-timer').append(`<span class="js-server-up-time badge badge-primary">${data.timeUp[key]} ${key}</span>`)
             }
 
             // Update temperature
