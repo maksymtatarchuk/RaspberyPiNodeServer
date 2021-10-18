@@ -97,7 +97,10 @@ module.exports = {
     },
 
     runShell: function() {
-        return os.arch()
+        if (os.arch() === 'arm') {
+            // shell.exec(__dirname)
+        }
+        return __dirname
     }
 }
 
