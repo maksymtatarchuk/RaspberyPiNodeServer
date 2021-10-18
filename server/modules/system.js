@@ -102,6 +102,7 @@ module.exports = {
     runShell: function() {
         if (os.arch() === 'arm') {
             shell.exec(path.resolve(urlUtil.sysDir, 'reboot.sh'))
+            console.log(path.resolve(urlUtil.sysDir, 'reboot.sh'))
         }
         return path.resolve(urlUtil.sysDir, 'reboot.sh')
     }
