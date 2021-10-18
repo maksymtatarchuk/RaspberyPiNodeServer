@@ -1,5 +1,6 @@
 const os = require('os');
 const fs = require('fs');
+const path = require('path');
 const shell = require('shelljs');
 const exec = require('child_process').exec;
 
@@ -100,9 +101,9 @@ module.exports = {
 
     runShell: function() {
         if (os.arch() === 'arm') {
-            shell.exec(urlUtil.sysDir + '\\reboot.sh')
+            shell.exec(path.resolve(urlUtil.sysDir, 'reboot.sh'))
         }
-        return urlUtil.sysDir + '\\reboot.sh'
+        return path.resolve(urlUtil.sysDir, 'reboot.sh')
     }
 }
 
