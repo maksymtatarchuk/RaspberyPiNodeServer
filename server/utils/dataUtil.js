@@ -4,7 +4,7 @@ function numbToString(obj) {
     for (let key in obj) {
         result[key] = obj[key] < 10 & key !== 'd' ? '0' + obj[key] : obj[key].toString();
     }
-
+    console.log(obj)
     return result
 }
 

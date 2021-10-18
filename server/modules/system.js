@@ -23,7 +23,6 @@ module.exports = {
     'getServerUpTime': function() {
         let upTime = os.uptime();
         let serverUptime = dataUtil.countTimer(upTime);
-        console.log(upTime)
         return serverUptime
     },
 
