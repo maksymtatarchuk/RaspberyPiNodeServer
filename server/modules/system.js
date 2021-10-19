@@ -1,12 +1,7 @@
 const os = require('os');
 const fs = require('fs');
-const path = require('path');
 const shell = require('shelljs');
 const exec = require('child_process').exec;
-
-const urlUtil = require('../utils/urlUtil');
-
-const dataUtil = require('../utils/dataUtil');
 
 function commandExecutor(command) {
     exec(command, (error, stdout, stderr) => {

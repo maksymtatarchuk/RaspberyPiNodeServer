@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const path = require('path');
+const urlUtil = require('../utils/urlUtil');
 const system = require('../modules/system');
 
 router.get('/api/sysParams', (req, res) => {
