@@ -35,9 +35,13 @@ $('#server-data-monitoring').on('click', (e) => {
 })
 
 $('#sys-shell-reboot').on('click', () => {
-    $.get('/api/reboot', (data) => console.log(data))
+    $.get('/api/reboot', (data) => {
+        console.log('res: ', data)
+    })
 })
 
 $('#sys-shell-pull').on('click', () => {
-    $.get('/api/pull', (data) => console.log(data))
+    $.get('/api/pull', (data) => {
+        console.log('res: ', data)
+    })
 })
