@@ -36,12 +36,13 @@ $('#server-data-monitoring').on('click', (e) => {
 
 $('#sys-shell-reboot').on('click', () => {
     $.get('/api/reboot', (data) => {
-        console.log('res: ', data)
+        console.log('res: ', data.value)
     })
 })
 
 $('#sys-shell-pull').on('click', () => {
+    alert('pull')
     $.get('/api/pull', (data) => {
-        console.log('res: ', data)
+        console.log('res: ', data.value)
     })
 })
