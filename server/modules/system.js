@@ -84,6 +84,10 @@ module.exports = {
         }
     },
 
+    'getSysArch' : function() {
+        return os.arch()
+    },
+
     executeCommand: function(command) {
         if (command === '' || command === undefined) {
             console.log('Input command');

@@ -28,10 +28,10 @@
         <span class="js-server-temp badge badge-<%= cpuTemperature.status %>"><%= cpuTemperature.value %></>
     </span>
     <% } %>
-    <% if (cpu) {%>
+    <% if (sysArch) {%>
     <span class=" server-sys-param">
-        Power status:
-        <span class="badge badge-secondary"></span>
+        Sys.arch.:
+        <span class="badge badge-light"><%= sysArch %></span>
     </span>
     <% } %>
 </div>
