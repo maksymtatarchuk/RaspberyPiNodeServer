@@ -27,7 +27,6 @@ app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist/'));
 app.use(serverRouters);
 
 app.get('/', (req, res) => {
-    // system.executeCommand('node -v');
     res.render('index', {
         'serverUpTime': system.getServerUpTime().viveData,
         'cpuTemperature': system.getCpuTemperature(),
