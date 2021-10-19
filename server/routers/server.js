@@ -11,7 +11,12 @@ router.get('/api/sysParams', (req, res) => {
 })
 
 router.get('/api/reboot', (req, res) => {
-    let data = system.runShell()
+    let data = system.runShell('sh ' + path.resolve(urlUtil.sysDir, 'reboot.sh'))
+    res.json({value: data})
+})
+
+router.get('/api/pull', (req, res) => {
+    let data = system.runShell('sh ' + path.resolve(urlUtil.sysDir, 'pull.sh'))
     res.json({value: data})
 })
 

@@ -99,13 +99,11 @@ module.exports = {
         // console.log('getTest()')
     },
 
-    runShell: function() {
+    runShell: function(src) {
         if (os.arch() === 'arm') {
-            shell.exec('sh ' + path.resolve(urlUtil.sysDir, 'reboot.sh'))
-            console.log('appDir', urlUtil.appDir)
-            console.log('sysDir', urlUtil.sysDir)
+            shell.exec(src)
         }
-        return path.resolve(urlUtil.sysDir, 'reboot.sh')
+        return os.arch() + ' ' + src !== undefined ? src : '??'
     }
 }
 
