@@ -35,14 +35,19 @@ $('#server-data-monitoring').on('click', (e) => {
 })
 
 $('#sys-shell-reboot').on('click', () => {
-    $.get('/api/reboot', (data) => {
-        console.log('res: ', data.value)
-    })
+    let msg = confirm('Are you sure that you want to reboot the server?')
+    if (msg) {
+        $.get('/api/reboot', (data) => {
+            console.log('res: ', data.value)
+        })
+    }
 })
 
 $('#sys-shell-pull').on('click', () => {
-    alert('pull')
-    $.get('/api/pull', (data) => {
-        console.log('res: ', data.value)
-    })
+    let msg = confirm('Are you sure that you want to execute - git pull?')
+    if (msg) {
+        $.get('/api/pull', (data) => {
+            console.log('res: ', data.value)
+        })
+    }
 })

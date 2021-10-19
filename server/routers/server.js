@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const path = require('path');
 const system = require('../modules/system');
 
 router.get('/api/sysParams', (req, res) => {
