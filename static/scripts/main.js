@@ -15,7 +15,6 @@ function updateSererDataMonitoringBar() {
             }
 
             // Update temperature
-            console.log(data.temp.value)
             $('.js-server-temp').text(data.temp.value)
             let newTempClass = $('.js-server-temp').attr('class').split(' ').slice(0, 2).join(' ') + ' badge-' + data.temp.status;
             $('.js-server-temp').attr('class', newTempClass)
