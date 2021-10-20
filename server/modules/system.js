@@ -46,10 +46,9 @@ function countTimer(seconds) {
 
 function getTempValue(temp) {
     temp = temp.toString().split('.')
-    console.log(temp)
     let a = parseInt(temp[0]) < 10 && temp[1].length < 2 ? '0' + temp[0] : temp[0]
     let b = parseInt(temp[1]) < 10 && temp[1].length < 2 ? '0' + temp[1] : temp[1]
-    console.log('a', a, 'b', b)
+
     return a + '.' + b + ' C'
 }
 
