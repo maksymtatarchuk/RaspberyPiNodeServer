@@ -48,7 +48,7 @@ function getTempValue(temp) {
     temp = temp.toString().split('.')
     let a = parseInt(temp[0]) < 10 ? '0' + temp[0] : temp[0]
     let b = parseInt(temp[1]) < 10 ? '0' + temp[1] : temp[1]
-
+    console.log('a', a, 'b', b)
     return a + '.' + b + ' C'
 }
 
@@ -64,12 +64,7 @@ module.exports = {
 
         try {
             temp.value = fs.readFileSync("/sys/class/thermal/thermal_zone0/temp");
-
-            console.log('val1', temp.value, 'val2', temp.value/10, 'val3', Math.round(temp.value/10))
-
             temp.value = Math.round(temp.value/10)/100;
-
-            console.log('||temp.value =', temp.value)
 
             if (temp.value > 70) {
                 temp.status = 'danger';
