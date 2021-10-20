@@ -64,11 +64,14 @@ module.exports = {
 
         try {
             temp.value = fs.readFileSync("/sys/class/thermal/thermal_zone0/temp");
-            temp.value = Math.round(temp.value/10)/100;
+
             temp.val1 = temp.value
             temp.val2 = temp.value/10
             temp.val3 = Math.round(temp.value/10)
-            console.log('val1', temp.val1, 'val2', temp.val2, 'val3', temp.val3, 'val', temp.val)
+
+            temp.value = Math.round(temp.value/10)/100;
+
+            console.log('val1', temp.val1, 'val2', temp.val2, 'val3', temp.val3, '||temp.value =', temp.value)
             if (temp.value > 70) {
                 temp.status = 'danger';
             } else if (temp.value > 60) {
