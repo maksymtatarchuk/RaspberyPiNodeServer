@@ -12,14 +12,16 @@ router.get('/api/sysParams', (req, res) => {
     })
 })
 
-router.get('/api/reboot', (req, res) => {
-    let data = system.runShell('sh ' + path.resolve(urlUtil.sysDir, 'reboot.sh'))
-    res.json({value: data})
+router.post('/api/shellCommand', (req, res) => {
+    let data = req.body['command']
+    system.runShell('sh ' + path.resolve(urlUtil.sysDir, data + '.sh'))
+    res.json(data)
+
 })
 
-router.get('/api/pull', (req, res) => {
-    let data = system.runShell('sh ' + path.resolve(urlUtil.sysDir, 'pull.sh'))
-    res.json({value: data})
-})
+// router.get('/api/pull', (req, res) => {
+//     let data = system.runShell('sh ' + path.resolve(urlUtil.sysDir, 'pull.sh'))
+//     res.json({value: data})
+// })
 
 module.exports = router;

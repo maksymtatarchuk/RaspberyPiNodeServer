@@ -17,7 +17,6 @@ function updateSererDataMonitoringBar() {
             // Update temperature
             $('.js-server-temp').text(data.temp.value)
             let newTempClass = $('.js-server-temp').attr('class').split(' ').slice(0, 2).join(' ') + ' badge-' + data.temp.status;
-            console.log(data.temp.value)
             $('.js-server-temp').attr('class', newTempClass)
         })
     }, 1000)
@@ -35,20 +34,12 @@ $('#server-data-monitoring').on('click', (e) => {
     $('#server-data-monitoring').attr('status', data)
 })
 
-$('#sys-shell-reboot').on('click', () => {
-    let msg = confirm('Are you sure that you want to reboot the server?')
+$('.sys-shell-command').on('click', (e) => {
+    let command = e.target.id.split('sys-shell-')[1];
+    let msg = confirm(`Are you sure that you want to run command "${command}" for the server?`);
     if (msg) {
-        $.get('/api/reboot', (data) => {
-            console.log('res: ', data.value)
-        })
-    }
-})
-
-$('#sys-shell-pull').on('click', () => {
-    let msg = confirm('Are you sure that you want to execute - git pull?')
-    if (msg) {
-        $.get('/api/pull', (data) => {
-            console.log('res: ', data.value)
-        })
+        $.post('/api/shellCommand', {'command':command}, (data) =>  {
+            console.log(data)
+        }, 'json')
     }
 })

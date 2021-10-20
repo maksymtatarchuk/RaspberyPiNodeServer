@@ -4,6 +4,7 @@ const path = require('path');
 const system = require('./server/modules/system');
 const colors = require('colors');
 const serverRouters = require('./server/routers/server')
+const bodyParser = require("body-parser");
 
 
 var PORT = 3000;
@@ -23,6 +24,8 @@ app.use(express.static(path.resolve(__dirname, 'static')));
 app.use('/bootstrap/js', express.static(__dirname + '/node_modules/bootstrap/dist/js/'));
 app.use('/bootstrap/css', express.static(__dirname + '/node_modules/bootstrap/dist/css/'));
 app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist/'));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 app.use(serverRouters);
 
