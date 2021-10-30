@@ -1,13 +1,31 @@
-
 .server-data-bar {
-    background-color: #6f42c188;
-    font-family: serif;
+    color: white;
+    background-color: #6e42c1ee;
+    width: 100%;
     padding: 4px 0;
     cursor: default;
     user-select: none;
     align-items: center;
+    /* box-shadow: 0 1px 5px #ffffff7e; */
+    transition: 0.5s;
+}
+
+.server-data-bar-hidden {
+    margin-top: -46px;
+    transition: 0.5s;
+}
+
+.server-data-bar-hide-btn {
+    height: 24px;
+    width: 60px;
+    margin-left: 94vw;
+    background-color: #6e42c1ee;
+    text-align: center;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    transition: 0.5s;
 }
 
 .server-sys-param {
-    margin: 0 5px;
+    margin: 0 20px;
 }

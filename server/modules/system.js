@@ -103,6 +103,17 @@ module.exports = {
             shell.exec(src)
         }
         return os.arch() + ' ' + src !== undefined ? src : '??'
+    },
+
+    getCurrentIP: function() {
+        let ipArr = os.networkInterfaces();
+        let result = {};
+
+        for (let key in ipArr) {
+            result[key] = ipArr[key][1].address;
+        }
+
+        return result
     }
 }
 

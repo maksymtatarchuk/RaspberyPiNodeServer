@@ -1,11 +1,10 @@
 .bot-container {
-    margin: 10px 5px 5px 20vw;
     display: flex;
     flex-direction: column;
-    background-color: #576675;
-    height: 94vh;
-    width: 79vw;
+    background-color: #57667555;
+    height: 90vh;
+    width: 75vw;
 
     border-radius: 9px;
-    box-shadow: 1px 1px 5px gray;
+    box-shadow: 0 0 6px white;
 }

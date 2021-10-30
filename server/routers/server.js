@@ -19,9 +19,4 @@ router.post('/api/shellCommand', (req, res) => {
 
 })
 
-// router.get('/api/pull', (req, res) => {
-//     let data = system.runShell('sh ' + path.resolve(urlUtil.sysDir, 'pull.sh'))
-//     res.json({value: data})
-// })
-
 module.exports = router;

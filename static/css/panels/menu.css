@@ -1,0 +1,28 @@
+.menu-container {
+    height: 90vh;
+    width: 20vw;
+}
+
+.bot-name {
+    text-align: center;
+    font-weight: bold;
+    width: 20vw;
+}
+
+.js-disconnect-button {
+    margin: 0 1%;
+    width: 98%;
+}
+
+.bot-ava {
+    margin: 0 1vw 1vh 1vw;
+    border-radius: 7px;
+    width: 18vw;
+}
+
+.js-connect-button {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    margin: -16px 1% 1vh 1%;
+    width: 98%;
+}

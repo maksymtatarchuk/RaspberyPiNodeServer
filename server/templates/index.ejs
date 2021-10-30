@@ -11,10 +11,15 @@
 </head>
     <body>
         <%- include('panels/serverDataBar', {serverUpTime: serverUpTime, cpuTemperature: cpuTemperature, sysArch: sysArch}); %>
-        <%- include('panels/botFrame') %>
+        <div class="work-container">
+            <%- include('panels/menu') %>
+            <%- include('panels/botFrame') %>
+        </div>
 
         <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
         <script src="/scripts/main.js"></script>
+        <script src="/scripts/serverBar.js"></script>
+        <script src="/scripts/menu.js"></script>
     </body>
 </html>
 

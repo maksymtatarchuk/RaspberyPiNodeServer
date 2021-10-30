@@ -1,19 +1,19 @@
-const $ = require('jquery');
+// Import node_modules
 const express = require ('express');
 const path = require('path');
-const system = require('./server/modules/system');
 const colors = require('colors');
-const serverRouters = require('./server/routers/server')
 const bodyParser = require("body-parser");
 
+//  Import modules
+const system = require('./server/modules/system');
 
+//  Import routers
+const serverRouters = require('./server/routers/server')
+const botRouters = require('./server/routers/bot')
+
+// Set IP address and PORT
 var PORT = 3000;
-
-// try {
-//     PORT = process.env.PORT ?? 3000;
-// } catch (e) {
-    // PORT = 3000;
-// }
+var currentIP = system.getCurrentIP()['Wi-Fi'];
 
 const app = express();
 
@@ -27,7 +27,9 @@ app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist/'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+//  Use routers
 app.use(serverRouters);
+app.use(botRouters);
 
 app.get('/', (req, res) => {
     res.render('index', {
@@ -37,4 +39,4 @@ app.get('/', (req, res) => {
     })
 });
 
-app.listen(PORT, () => console.log(colors.bold('Started')));
+app.listen(PORT, () => console.log(colors.bold(`Started on http://${currentIP}:${PORT}`)));
